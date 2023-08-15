@@ -1,0 +1,73 @@
+.login-form {
+  display: flex;
+  flex-direction:column;
+  width:400px;
+  background-color:gray;
+  padding: 20px 40px;
+}
+.register-btn{
+    float:right;
+}
+.btns-row{
+    margin-top:20px;
+}
+.login-form-btn {
+  width: 100px;
+}
+.login-page {
+  background-image: linear-gradient(225deg, #439466, white);
+  height: calc(100vh - 73px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 160px;
+  gap: 50px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px 0px #343434;
+}
+img{
+    width:500px;
+}
+#circle {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%
+}
+.curve-div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+  .curve-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: green;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+  }
+
+  .curve-div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+  }
