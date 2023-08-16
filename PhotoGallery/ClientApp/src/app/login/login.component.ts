@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     fullName: 'elad',
     email: 'elad@gmail.com',
     password: '123345',
-    phoneNumber: '0548138620'
+    phoneNumber: '0548138620' 
   }
   constructor() { }
 
