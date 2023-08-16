@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "PhotoGallery"
+  "defaultProject": "PhotoGallery",
+  "cli": {
+    "analytics": false
+  }
 }
