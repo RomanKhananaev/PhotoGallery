@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PhotoGallery.Models;
 
 namespace PhotoGallery.Controllers
 {
@@ -7,10 +8,17 @@ namespace PhotoGallery.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        [HttpPost]
-        public void Register()
+        [HttpPost("Register")]
+        public IActionResult Register(UserDTOS user)
         {
-
+            try
+            {
+               return Ok("Registration successful!");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Registration failed"); 
+            }
         }
     }
 }

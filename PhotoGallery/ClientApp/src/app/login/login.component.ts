@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: '123345',
     phoneNumber: '0548138620' 
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,17 @@ export class LoginComponent implements OnInit {
   }
   printForm() {
     console.log("Register form: ", this.registerForm);
+  }
+  registerUser() {
+    const apiUrl = 'https://localhost:7157/api/User/Register';
+
+    this.http.post(apiUrl, this.registerForm).subscribe(
+      response => {
+        console.log('User registered:', response);
+      },
+      error => {
+        console.error('Error registering user:', error);
+      }
+    );
   }
 }

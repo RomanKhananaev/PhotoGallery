@@ -12,21 +12,21 @@
         <input />
         <div class="btns-row">
           <button class="login-form-btn">Login</button>
-          <button class="login-form-btn register-btn" (click)="ChangeMode()">Register</button>
+          <button class="login-form-btn register-btn" (click)="ChangeMode()">Sign Up</button>
         </div>
       </div>
       <div *ngIf="isRegister" class="login-form">
         <span>FULL NAME</span>
         <input [(ngModel)]="registerForm.fullName" />
         <span>EMAIL</span>
-        <input [(ngModel)]="registerForm.email"/>
+        <input [(ngModel)]="registerForm.email" />
         <span class="mt-2">PASSWORD</span>
-        <input type="password" [(ngModel)]="registerForm.password"/>
+        <input type="password" [(ngModel)]="registerForm.password" />
         <span class="mt-2">PHONE NUMBER</span>
-        <input [(ngModel)]="registerForm.phoneNumber"/>
+        <input [(ngModel)]="registerForm.phoneNumber" />
         <div class="btns-row">
           <button class="login-form-btn" (click)="ChangeMode()">Back</button>
-          <button class="login-form-btn register-btn" (click)="printForm()">Continue</button>
+          <button type="submit" class="login-form-btn register-btn" (click)="registerUser()">Continue</button>
         </div>
       </div>
     </div>
