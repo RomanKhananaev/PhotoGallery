@@ -7,11 +7,11 @@
     <div>
       <div *ngIf="!isRegister" class="login-form">
         <span>EMAIL</span>
-        <input />
+        <input [(ngModel)]="loginForm.email"/>
         <span class="mt-2">PASSWORD</span>
-        <input />
+        <input type="password" [(ngModel)]="loginForm.password"/>
         <div class="btns-row">
-          <button class="login-form-btn">Login</button>
+          <button class="login-form-btn" (click)="loginUser()">Login</button>
           <button class="login-form-btn register-btn" (click)="ChangeMode()">Sign Up</button>
         </div>
       </div>

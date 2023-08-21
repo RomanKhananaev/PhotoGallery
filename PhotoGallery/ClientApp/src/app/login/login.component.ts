@@ -15,6 +15,11 @@ export class LoginComponent implements OnInit {
     password: '123345',
     phoneNumber: '0548138620' 
   }
+
+  loginForm: any = {
+    email: 'elad@gmail.com',
+    password: '123345'
+  }
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -35,6 +40,17 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.error('Error registering user:', error);
+      }
+    );
+  }
+  loginUser() {
+    const apiUrl = 'https://localhost:7157/api/User/Login';
+    this.http.post(apiUrl, this.loginForm).subscribe(
+      response => {
+        console.log('User login:', response);
+      },
+      error => {
+        console.error('Error login user:', error);
       }
     );
   }

@@ -9,7 +9,7 @@ namespace PhotoGallery.Controllers
     public class UserController : ControllerBase
     {
         [HttpPost("Register")]
-        public IActionResult Register(UserDTOS user)
+        public IActionResult Register(User.UserRegisterDTO user)
         {
             try
             {
@@ -18,6 +18,19 @@ namespace PhotoGallery.Controllers
             catch (Exception)
             {
                 return BadRequest("Registration failed"); 
+            }
+        }
+
+        [HttpPost("Login")]
+        public IActionResult Login(User.UserLoginDTO user)
+        {
+            try
+            {
+                return Ok("Login successful!");
+            }
+            catch(Exception)
+            {
+                return BadRequest("Login failed");
             }
         }
     }
