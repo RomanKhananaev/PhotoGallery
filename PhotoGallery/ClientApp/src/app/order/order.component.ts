@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { OrderGeneratorComponent } from '../order-generator/order-generator.component';
 
 @Component({
@@ -8,19 +8,15 @@ import { OrderGeneratorComponent } from '../order-generator/order-generator.comp
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  fullName!: string;
-  phoneNumber!: string;
+  //fullName!: string;
+  //phoneNumber!: string;
 
-  constructor(public _dialog: MatDialog) { }
+  constructor(private _dialog: MatDialog) { }
 
   createNewOrder() {
     console.log("createNewOrder");
-    const dialogRef = this._dialog.open(OrderGeneratorComponent, {
-      width: '250px',
-      data: { fullName: this.fullName, phoneNumber: this.phoneNumber },
-    }
-    )
-  };
+    const dialogRef = this._dialog.open(OrderGeneratorComponent);
+  }
 
 
   ngOnInit(): void {
