@@ -1,0 +1,52 @@
+.cardImage {
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  gap:10px;
+  padding-left:25px;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  gap: 30px;
+}
+.verticalCenter {
+  display: flex;
+  align-items: center;
+}
+.clientName {
+    font-weight:bold;
+}
+.clientGuestsAmount {
+    letter-spacing:1px;
+}
+svg {
+    margin-right:5px;
+}
+.btn {
+  height: 50px;
+  width: 150px;
+  color: rgb(255, 250, 244);
+  letter-spacing: 1px;
+}
+.approveBtn {
+  background-color: rgb(210, 83, 128);
+}
+.approveBtn:hover {
+  background-color: rgb(180, 83, 128);
+}
+.cancelBtn {
+  background-color: rgb(224, 142, 109);
+}
+.cancelBtn:hover {
+  background-color: rgb(200, 142, 109);
+}

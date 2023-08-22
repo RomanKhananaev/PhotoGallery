@@ -1,4 +1,4 @@
-.newOrder {
+/*.newOrder {
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -11,11 +11,11 @@
   height: 100%;
   min-height: inherit;
   max-height: inherit;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.33); /* Adjust shadow properties */
-}
-.mat-dialog-container {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.33);*/ /* Adjust shadow properties */
+/*}*/
+/*.mat-dialog-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure dialog covers the full height of the viewport */
-}
+  min-height: 100vh;*/ /* Ensure dialog covers the full height of the viewport */
+/*}*/
