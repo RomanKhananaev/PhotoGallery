@@ -36,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'order', component: OrderComponent },
+
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ])
