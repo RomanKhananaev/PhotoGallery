@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PhotoGallery.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,9 +16,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddDbContext<db_context>(options =>
+builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApiDatabase"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 var app = builder.Build();
