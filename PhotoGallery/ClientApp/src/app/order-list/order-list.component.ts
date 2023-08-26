@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderGeneratorComponent } from '../order-generator/order-generator.component';
@@ -9,13 +10,11 @@ import { OrderGeneratorComponent } from '../order-generator/order-generator.comp
 })
 export class OrderListComponent implements OnInit {
   isDialogOpen = false;
-  orderList: any = [
-    { name: "Elad Mor", phoneNumber: "0548138620", guestsAmount: 200, date: "04-07-2022", image: "../../assets/images/P1.jpg" },
-    { name: "Roman Khananaev", phoneNumber: "0548138681", guestsAmount: 600, date: "14-07-2024", image: "../../assets/images/P2.jpg" },
-    { name: "Meital Mor", phoneNumber: "0508653274", guestsAmount: 360, date: "04-08-2023", image: "../../assets/images/P3.jpg" }
-  ];
+  orderList: any = [];
   
-  constructor(private _dialog: MatDialog) { }
+  constructor(
+    private _dialog: MatDialog,
+    private http: HttpClient) { }
 
   createNewOrder() {
     if (!this.isDialogOpen) {
@@ -28,7 +27,22 @@ export class OrderListComponent implements OnInit {
     }
   }
 
+  getOrders() {
+    const apiUrl = 'https://localhost:7157/api/Order/GetOrders';
+
+    this.http.get(apiUrl).subscribe(
+      response => {
+        console.log('Response:', response);
+        this.orderList = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
   ngOnInit(): void {
+    this.getOrders();
     console.log("Orders: ", this.orderList);
   }
 

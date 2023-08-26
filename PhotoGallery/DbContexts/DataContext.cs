@@ -8,5 +8,6 @@ namespace PhotoGallery.DbContexts
         public DataContext(DbContextOptions<DataContext> option)
             :base(option) { }
         public DbSet<User> Users => Set<User>();
+        public DbSet<Order> Orders => Set<Order>();
     }
 }
