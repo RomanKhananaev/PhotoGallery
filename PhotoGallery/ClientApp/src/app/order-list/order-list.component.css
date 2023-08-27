@@ -50,3 +50,12 @@ svg {
 .cancelBtn:hover {
   background-color: rgb(200, 142, 109);
 }
+.spinner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}

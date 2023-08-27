@@ -11,6 +11,7 @@ import { OrderGeneratorComponent } from '../order-generator/order-generator.comp
 export class OrderListComponent implements OnInit {
   isDialogOpen = false;
   orderList: any = [];
+  isLoading = false;
   
   constructor(
     private _dialog: MatDialog,
@@ -28,14 +29,17 @@ export class OrderListComponent implements OnInit {
   }
 
   getOrders() {
+    this.isLoading = true;
     const apiUrl = 'https://localhost:7157/api/Order/GetOrders';
 
     this.http.get(apiUrl).subscribe(
       response => {
         console.log('Response:', response);
         this.orderList = response;
+        this.isLoading = false;
       },
       error => {
+        this.isLoading = false;
         console.error(error);
       }
     );

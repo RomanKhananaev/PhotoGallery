@@ -1,8 +1,46 @@
 <div class="newOrder">
-  <h1 mat-dialog-title>Create new order</h1>
-  <div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-  <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+  <h1 mat-dialog-title>Event Details</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Invited Amount</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Select the desired date</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="minDate" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  </div>
+  <div mat-dialog-actions class="button-container">
+    <button mat-button mat-dialog-close class="cancelBtn btn">Cancel</button>
+    <button mat-button class="approveBtn btn" type="submit">Let's Go</button>
   </div>
 </div>
-

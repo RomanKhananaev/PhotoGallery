@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PhotoGallery.DbContexts;
+using PhotoGallery.Entities;
 using System.Data.Entity;
 
 namespace PhotoGallery.Controllers
@@ -12,7 +13,30 @@ namespace PhotoGallery.Controllers
         public OrderController(DataContext db)
         {
             m_db = db;
+            //m_db.Orders.Add(object from client)
+            //    try
+            //{
+            //    m_db.SaveChanges();
+            //}
+            //catch
+            //{
+
+            //}
         }
+
+        //[HttpPost("PostNewOrder")]
+        //public IActionResult PostNewOrder (Models.Order.SetOrderDTO order)
+        //{
+        //    try
+        //    {
+        //        m_db.Orders.Add(order);
+        //    }
+        //    catch
+        //    {
+
+        //    }
+        //}
+
         [HttpGet("GetOrders")]
         public IActionResult GetOrders ()
         {
