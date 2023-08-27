@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { OrderGeneratorComponent } from './order-generator/order-generator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrderListComponent } from './order-list/order-list.component';
+import { RequestListComponent } from './request-list/request-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -30,7 +30,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     CounterComponent,
     FetchDataComponent,
     LoginComponent,
-    OrderListComponent,
+    RequestListComponent,
     OrderGeneratorComponent
   ],
   imports: [
@@ -49,7 +49,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'order-list', component: OrderListComponent },
+      { path: 'request-list', component: RequestListComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ])

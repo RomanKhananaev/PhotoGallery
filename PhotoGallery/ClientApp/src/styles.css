@@ -15,5 +15,34 @@ code {
   border-color: #1861ac;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn {
+  height: 50px;
+  width: 150px;
+  color: rgb(255, 250, 244);
+  letter-spacing: 1px;
+}
+
+.approveBtn {
+  background-color: rgb(210, 83, 128);
+}
+
+  .approveBtn:hover {
+    background-color: rgb(180, 83, 128);
+  }
+
+.cancelBtn {
+  background-color: rgb(224, 142, 109);
+}
+
+  .cancelBtn:hover {
+    background-color: rgb(200, 142, 109);
+  }

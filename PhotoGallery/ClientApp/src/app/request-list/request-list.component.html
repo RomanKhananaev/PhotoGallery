@@ -1,7 +1,5 @@
 <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
-<div>
-  <button mat-button (click)="createNewOrder()">New Order</button>
-</div>
+<button class="btn approveBtn newReqBtn" mat-button (click)="createNewOrder()">+</button>
 
 <div class="container">
   <div *ngFor="let order of orderList" class="mb-4">

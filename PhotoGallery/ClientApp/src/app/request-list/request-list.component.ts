@@ -5,11 +5,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { OrderGeneratorComponent } from '../order-generator/order-generator.component';
 
 @Component({
-  selector: 'app-order-list',
-  templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  selector: 'app-request-list',
+  templateUrl: './request-list.component.html',
+  styleUrls: ['./request-list.component.css']
 })
-export class OrderListComponent implements OnInit {
+export class RequestListComponent implements OnInit {
   isDialogOpen = false;
   orderList: any = [];
   

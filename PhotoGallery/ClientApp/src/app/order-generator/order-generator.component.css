@@ -1,16 +1,3 @@
-.btn {
-  height: 50px;
-  width: 150px;
-  color: rgb(255, 250, 244);
-  letter-spacing: 1px;
-}
-
-.approveBtn {
-  background-color: rgb(210, 83, 128);
-}
-.cancelBtn {
-  background-color: rgb(224, 142, 109);
-}
 .button-container {
   display: flex;
   height: 100%;
