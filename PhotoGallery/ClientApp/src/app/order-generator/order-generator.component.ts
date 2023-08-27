@@ -25,6 +25,8 @@ export class OrderGeneratorComponent implements OnInit {
 
   SendOrder() {
     console.log(this.orderForm);
+    const now = new Date();
+    this.orderForm.eventDate = new Date(this.orderForm.eventDate.getTime() - (now.getTimezoneOffset() * 60000));
     const apiUrl = 'https://localhost:7157/api/Order/SetOrders';
     this.http.post(apiUrl, this.orderForm).subscribe(
       response => {
