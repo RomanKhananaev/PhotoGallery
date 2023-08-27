@@ -5,13 +5,13 @@
       <div class="col-6">
         <mat-form-field appearance="fill">
           <mat-label>First Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="orderForm.firstName">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill">
           <mat-label>Last Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="orderForm.lastName">
         </mat-form-field>
       </div>
     </div>
@@ -19,28 +19,33 @@
       <div class="col-6">
         <mat-form-field appearance="fill">
           <mat-label>Phone Number</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="orderForm.phoneNumber">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill">
           <mat-label>Invited Amount</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="orderForm.invitedAmount">
         </mat-form-field>
       </div>
     </div>
     <div class="row">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Select the desired date</mat-label>
-        <input matInput [matDatepicker]="picker" [min]="minDate" readonly>
+        <input matInput [matDatepicker]="picker" [min]="minDate" [(ngModel)]="orderForm.eventDate" readonly>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
       </mat-form-field>
     </div>
-
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Upload an image</mat-label>
+        <input matInput placeholder="for now string is enough" [(ngModel)]="orderForm.imagePath">
+      </mat-form-field>
+    </div>
   </div>
   <div mat-dialog-actions class="button-container">
     <button mat-button mat-dialog-close class="cancelBtn btn">Cancel</button>
-    <button mat-button class="approveBtn btn" type="submit">Let's Go</button>
+    <button mat-button class="approveBtn btn" type="submit" (click)="SendOrder()">Save</button>
   </div>
 </div>

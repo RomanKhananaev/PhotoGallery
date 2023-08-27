@@ -3,11 +3,6 @@
 </div>
 
 <div class="container">
-  
-  <div class="spinner-content" *ngIf="isLoading">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-    Loading...
-  </div>
   <div *ngFor="let order of orderList" class="mb-4">
     <mat-card>
       <div class="row">

@@ -2,6 +2,7 @@
 using PhotoGallery.DbContexts;
 using PhotoGallery.Entities;
 using System.Data.Entity;
+using static PhotoGallery.Models.Order;
 
 namespace PhotoGallery.Controllers
 {
@@ -13,29 +14,22 @@ namespace PhotoGallery.Controllers
         public OrderController(DataContext db)
         {
             m_db = db;
-            //m_db.Orders.Add(object from client)
-            //    try
-            //{
-            //    m_db.SaveChanges();
-            //}
-            //catch
-            //{
-
-            //}
         }
 
-        //[HttpPost("PostNewOrder")]
-        //public IActionResult PostNewOrder (Models.Order.SetOrderDTO order)
-        //{
-        //    try
-        //    {
-        //        m_db.Orders.Add(order);
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //}
+        [HttpPost("SetOrders")]
+        public IActionResult SetOrders (Order order)
+        {
+            try
+            {
+                m_db.Orders.Add(order);
+                m_db.SaveChanges();
+                return Ok("Order been send successfuly");
+            }
+            catch(Exception)
+            {
+                return BadRequest("Set order been falied");
+            }
+        }
 
         [HttpGet("GetOrders")]
         public IActionResult GetOrders ()

@@ -2,7 +2,7 @@
 {
     public class Order
     {
-        public class SetOrderDTO
+        public class OrderDTO
         {
             public string FirstName { get; set; } = string.Empty;
             public string LastName { get; set; } = string.Empty;
