@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { OrderGeneratorComponent } from '../order-generator/order-generator.component';
 
 @Component({
@@ -11,11 +12,11 @@ import { OrderGeneratorComponent } from '../order-generator/order-generator.comp
 export class OrderListComponent implements OnInit {
   isDialogOpen = false;
   orderList: any = [];
-  isLoading = false;
   
   constructor(
     private _dialog: MatDialog,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private spinner: NgxSpinnerService  ) { }
 
   createNewOrder() {
     if (!this.isDialogOpen) {
@@ -29,17 +30,17 @@ export class OrderListComponent implements OnInit {
   }
 
   getOrders() {
-    this.isLoading = true;
+    this.spinner.show();
     const apiUrl = 'https://localhost:7157/api/Order/GetOrders';
 
     this.http.get(apiUrl).subscribe(
       response => {
         console.log('Response:', response);
         this.orderList = response;
-        this.isLoading = false;
+        this.spinner.hide();
       },
       error => {
-        this.isLoading = false;
+        this.spinner.hide();
         console.error(error);
       }
     );
