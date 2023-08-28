@@ -5,16 +5,25 @@
 }
 ::ng-deep .mat-focused .mat-form-field-label { /*when label is going up*/
   color: rgb(210, 83, 128) !important;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 ::ng-deep.mat-form-field-underline {
-  display:none;
+  display: none;
 }
 
 ::ng-deep.mat-form-field-ripple {
   background-color: rgb(210, 83, 128) !important;
 }
+
 ::ng-deep .mat-form-field-label {
   color: rgb(210, 83, 128);
+  text-align: right;
+  padding: 1px;
 }
+
+.mat-form-field {
+  text-align: right;
+}
+
+

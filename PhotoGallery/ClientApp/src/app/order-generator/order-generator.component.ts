@@ -10,8 +10,8 @@ export class OrderGeneratorComponent implements OnInit {
   minDate: Date;
 
   orderForm = {
-    firstName: "Eti",
-    lastName: "Alon",
+    firstName: "אתי",
+    lastName: "אלון",
     phoneNumber: "0567765432",
     invitedAmount: 0,
     eventDate: new Date(2025, 5, 15),

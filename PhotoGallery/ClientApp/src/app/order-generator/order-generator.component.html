@@ -4,13 +4,13 @@
     <div class="row">
       <div class="col-6">
         <mat-form-field appearance="fill">
-          <mat-label>First Name</mat-label>
+          <mat-label>שם פרטי</mat-label>
           <input matInput [(ngModel)]="orderForm.firstName">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill">
-          <mat-label>Last Name</mat-label>
+          <mat-label>שם משפחה</mat-label>
           <input matInput [(ngModel)]="orderForm.lastName">
         </mat-form-field>
       </div>
@@ -18,20 +18,20 @@
     <div class="row">
       <div class="col-6">
         <mat-form-field appearance="fill">
-          <mat-label>Phone Number</mat-label>
+          <mat-label>מספר נייד</mat-label>
           <input matInput [(ngModel)]="orderForm.phoneNumber">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill">
-          <mat-label>Invited Amount</mat-label>
+          <mat-label>מספר מוזמנים משוער</mat-label>
           <input matInput [(ngModel)]="orderForm.invitedAmount">
         </mat-form-field>
       </div>
     </div>
     <div class="row">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Select the desired date</mat-label>
+        <mat-label>בחר תאריך אירוע משוער</mat-label>
         <input matInput [matDatepicker]="picker" [min]="minDate" [(ngModel)]="orderForm.eventDate" readonly>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
@@ -39,13 +39,13 @@
     </div>
     <div class="row">
       <mat-form-field appearance="fill">
-        <mat-label>Upload an image</mat-label>
+        <mat-label>טען תמונה מהרגע המיוחד שלכם</mat-label>
         <input matInput placeholder="for now string is enough" [(ngModel)]="orderForm.imagePath">
       </mat-form-field>
     </div>
   </div>
   <div mat-dialog-actions class="button-container">
-    <button mat-button mat-dialog-close class="cancelBtn btn">Cancel</button>
-    <button mat-button class="approveBtn btn" type="submit" (click)="SendOrder()">Save</button>
+    <button mat-button mat-dialog-close class="cancelBtn btn">ביטול בקשה</button>
+    <button mat-button class="approveBtn btn" type="submit" (click)="SendOrder()">שמירת בקשה</button>
   </div>
 </div>
