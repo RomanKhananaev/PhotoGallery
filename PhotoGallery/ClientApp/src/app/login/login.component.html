@@ -6,27 +6,27 @@
     </div>
     <div>
       <div *ngIf="!isRegister" class="login-form">
-        <span>EMAIL</span>
+        <span>מייל</span>
         <input [(ngModel)]="loginForm.email"/>
-        <span class="mt-2">PASSWORD</span>
+        <span class="mt-2">סיסמה</span>
         <input type="password" [(ngModel)]="loginForm.password"/>
         <div class="btns-row">
-          <button class="login-form-btn" (click)="loginUser()">Login</button>
-          <button class="login-form-btn register-btn" (click)="ChangeMode()">Sign Up</button>
+          <button class="login-form-btn" (click)="loginUser()">המשך</button>
+          <button class="login-form-btn register-btn" (click)="ChangeMode()">הרשמה</button>
         </div>
       </div>
       <div *ngIf="isRegister" class="login-form">
-        <span>FULL NAME</span>
+        <span>שם מלא</span>
         <input [(ngModel)]="registerForm.fullName" />
-        <span>EMAIL</span>
+        <span>מייל</span>
         <input [(ngModel)]="registerForm.email" />
-        <span class="mt-2">PASSWORD</span>
+        <span class="mt-2">סיסמה</span>
         <input type="password" [(ngModel)]="registerForm.password" />
-        <span class="mt-2">PHONE NUMBER</span>
+        <span class="mt-2">מספר נייד</span>
         <input [(ngModel)]="registerForm.phoneNumber" />
         <div class="btns-row">
-          <button class="login-form-btn" (click)="ChangeMode()">Back</button>
-          <button type="submit" class="login-form-btn register-btn" (click)="registerUser()">Continue</button>
+          <button class="login-form-btn" (click)="ChangeMode()">התחברות</button>
+          <button type="submit" class="login-form-btn register-btn" (click)="registerUser()">הרשמה</button>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   isRegister: boolean = true;
   registerForm: any = {
-    fullName: 'elad',
+    fullName: 'אלעד מור',
     email: 'elad@gmail.com',
     password: '123345',
     phoneNumber: '0548138620' 
