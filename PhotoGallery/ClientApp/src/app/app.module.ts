@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FetchDataComponent,
     LoginComponent,
     RequestListComponent,
-    OrderGeneratorComponent
+    OrderGeneratorComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,15 +48,18 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatNativeDateModule,
     MatProgressSpinnerModule,
     NgxSpinnerModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'request-list', component: RequestListComponent },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent }
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'contact', component: ContactComponent }
     ])
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
