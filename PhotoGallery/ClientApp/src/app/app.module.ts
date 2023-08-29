@@ -15,13 +15,16 @@ import { OrderGeneratorComponent } from './order-generator/order-generator.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RequestListComponent } from './request-list/request-list.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ContactComponent } from './contact/contact.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { ContactComponent } from './contact/contact.component';
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatCardModule,
     MatInputModule,
     MatDatepickerModule,
@@ -49,6 +53,8 @@ import { ContactComponent } from './contact/contact.component';
     MatProgressSpinnerModule,
     NgxSpinnerModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
@@ -60,7 +66,7 @@ import { ContactComponent } from './contact/contact.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [MatFormFieldModule, MatInputModule],
-  providers: [],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

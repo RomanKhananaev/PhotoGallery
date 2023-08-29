@@ -1,18 +1,25 @@
 <div class="container">
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <section class="example-section">
+      <mat-checkbox color="primary" class="example-margin">צפון</mat-checkbox>
+      <mat-checkbox color="primary" class="example-margin">מרכז</mat-checkbox>
+      <mat-checkbox color="primary" class="example-margin">דרום</mat-checkbox>
+    </section>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Select</mat-label>
-      <mat-select>
-        <mat-option value="one">First option</mat-option>
-        <mat-option value="two">Second option</mat-option>
-      </mat-select>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>שם האולם</mat-label>
+      <input type="text" matInput [formControl]="hallListSearchControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
 
-    <label for="name">
-      שם מלא
-    </label>
-    <input id="name" type="text" formControlName="name">
+    <!--<label for="name">
+    שם מלא
+  </label>
+  <input id="name" type="text" formControlName="name">-->
 
     <button class="button" type="submit">Purchase</button>
 
