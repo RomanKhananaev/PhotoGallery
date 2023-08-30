@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
 
 export interface HallNames {
   name: string;
   area: string;
+}
+
+interface Event {
+  eventKind: string;
 }
 
 @Component({
@@ -15,7 +19,7 @@ export interface HallNames {
 export class ContactComponent implements OnInit {
 
   checkoutForm = this.formBuilder.group({
-    name: ''
+    hallName: ''
   });
 
 
@@ -27,6 +31,15 @@ export class ContactComponent implements OnInit {
     { name: 'טאו', area: 'צפון' }, { name: 'קאי', area: 'דרום' }];
   filteredOptions: Observable<HallNames[]> | undefined;
 
+  events: Event[] = [
+    { eventKind: 'חתונה' },
+    { eventKind: 'בר/בת מצווה' },
+    { eventKind: 'ברית/ה' },
+    { eventKind: 'אירוע חברה' },
+    { eventKind: 'חינה' },
+    { eventKind: 'יום הולדת' },
+  ];
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -36,8 +49,8 @@ export class ContactComponent implements OnInit {
       map(name => (name ? this._filter(name) : this.options.slice())),
     );
   }
-  displayFn(user: HallNames): string {
-    return user && user.name ? user.name : '';
+  displayFn(hall: HallNames): string {
+    return hall && hall.name ? hall.name : '';
   }
 
   private _filter(name: string): HallNames[] {
