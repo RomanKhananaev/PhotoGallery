@@ -2,6 +2,7 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color:white;
 }
 
 html {
@@ -15,4 +16,42 @@ html {
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+.loginBtn {
+  background-color: white;
+  color: rgb(32, 82, 149);
+  border-radius: 100px;
+  border: none;
+  width: 120px;
+  height: 30px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+/*.searchIcon {
+  background-color: white;
+  margin-right:10px;
+  border-radius:100px;
+  height:80px;
+  width:80px;
+}*/
+.navbar {
+  background-color: rgb(20, 66, 114);
+}
+svg {
+  height: 15px;
+  width: 15px;
+}
+
+.searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+.navbar-nav .nav-link {
+  color: white;
 }
