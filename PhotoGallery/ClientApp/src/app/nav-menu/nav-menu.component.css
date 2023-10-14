@@ -2,7 +2,9 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  color:white;
+  color: white;
+  display: inline-block;
+  width: 100px;
 }
 
 html {
@@ -57,16 +59,17 @@ svg {
 }
 .navbar-nav .nav-link {
   color: white;
+
 }
 /*.navbar-brand {
     padding-right:20px;
     margin-right:20px;
-}
+}*/
   .navbar-brand:hover {
     text-decoration: underline;
     font-weight: bold;
   }
-.nav-link {
+/*.nav-link {
     font-size:200%;
 }*/
 /*.centered-links {
