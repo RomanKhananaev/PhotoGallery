@@ -27,6 +27,9 @@ html {
   font-weight:bold;
   letter-spacing:1px;
 }
+.row {
+  --bs-gutter-x: 14.5rem;
+}
 /*.searchIcon {
   background-color: white;
   margin-right:10px;
@@ -55,3 +58,19 @@ svg {
 .navbar-nav .nav-link {
   color: white;
 }
+.navbar-brand {
+    padding-right:20px;
+    margin-right:20px;
+}
+  .navbar-brand:hover {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+.nav-link {
+    font-size:200%;
+}
+/*.centered-links {
+  display: flex;
+  justify-content: center;*/ /* Horizontally center the child elements */
+  /*align-items: center;*/ /* Vertically center the child elements */
+/*}*/
