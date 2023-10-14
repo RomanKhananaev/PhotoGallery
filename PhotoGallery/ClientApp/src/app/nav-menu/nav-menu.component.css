@@ -65,10 +65,12 @@ svg {
     padding-right:20px;
     margin-right:20px;
 }*/
-  .navbar-brand:hover {
-    text-decoration: underline;
-    font-weight: bold;
-  }
+.navbar-brand:hover {
+  color: white;
+  font-weight: bold;
+  background-color: #0b4f93;
+  border-radius: 15px;
+}
 /*.nav-link {
     font-size:200%;
 }*/
