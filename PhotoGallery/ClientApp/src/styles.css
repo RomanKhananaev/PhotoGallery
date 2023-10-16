@@ -52,3 +52,6 @@ body {
 .mat-form-field-flex {
   width: 340px !important;
 }
+.mat-form-field-ripple {
+  background-color: rgb(24, 95, 170);
+}
