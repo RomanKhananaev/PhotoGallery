@@ -12,6 +12,19 @@ export class NavMenuComponent {
     this.isExpanded = false;
   }
 
+  //ngOnInit(): void {
+  //  console.log("Nav was created..");
+  //  document.getElementById("home")?.classList.add("highlighted");
+  //}
+  highlightNavMenue(menu: string) {
+    document.getElementById("home")?.classList.remove("highlighted");
+    document.getElementById("planingEvent")?.classList.remove("highlighted");
+    document.getElementById("services")?.classList.remove("highlighted");
+    document.getElementById("reviews")?.classList.remove("highlighted");
+
+    document.getElementById(menu)?.classList.add("highlighted");
+  }
+
   toggle() {
     this.isExpanded = !this.isExpanded;
   }

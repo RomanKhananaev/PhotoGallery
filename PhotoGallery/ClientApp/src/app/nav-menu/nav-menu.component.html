@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light borderBottom box-shadow">
     <div class="container">
       
         
@@ -21,10 +21,14 @@
             </span>
           </div>
           <div class="links">
-            <a class="navbar-brand" [routerLink]="['/']">דף הבית</a>
-            <a class="navbar-brand" [routerLink]="['/']">תכנון אירוע</a>
-            <a class="navbar-brand" [routerLink]="['/']">שירותים</a>
-            <a class="navbar-brand" [routerLink]="['/']">ביקורות</a>
+            <a id="home" (click)="highlightNavMenue('home')"
+               class="navbar-brand" [routerLink]="['/']">דף הבית</a>
+            <a id="planingEvent" (click)="highlightNavMenue('planingEvent')"
+               class="navbar-brand" [routerLink]="['/contact']">תכנון אירוע</a>
+            <a id="services" (click)="highlightNavMenue('services')"
+               class="navbar-brand" [routerLink]="['/']">שירותים</a>
+            <a id="reviews" (click)="highlightNavMenue('reviews')"
+               class="navbar-brand" [routerLink]="['/']">ביקורות</a>
 
           </div>
           

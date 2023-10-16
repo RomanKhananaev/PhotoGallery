@@ -40,7 +40,7 @@ html {
   width:80px;
 }*/
 .navbar {
-  background-color: rgb(20, 66, 114);
+  background-color: rgb(24, 95, 170);
 }
 svg {
   height: 15px;
@@ -79,3 +79,14 @@ svg {
   justify-content: center;*/ /* Horizontally center the child elements */
   /*align-items: center;*/ /* Vertically center the child elements */
 /*}*/
+.borderBottom {
+  border-bottom: 1px solid #a8a1a1;
+}
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: white;
+}
+.highlighted {
+  color: #414244 !important;
+  font-weight: bold;
+  border-bottom: 2px solid #414244;
+}

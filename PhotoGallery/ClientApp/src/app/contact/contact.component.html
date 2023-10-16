@@ -1,36 +1,51 @@
-<div class="container mr-2">
+<div class="welcome">
+  <div class="container">
+    <span class="hello"><p>שלום אורח</p></span>
+    <p>בשבילך כל הדרך עד האירוע המושלם</p>
+  </div>
+</div>
+
+<div class="eventDetails">
+  <h1>פרטי האירוע</h1>
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <section class="example-section">
+    <!--<section class="example-section">
       <mat-checkbox color="primary" class="example-margin">צפון</mat-checkbox>
       <mat-checkbox color="primary" class="example-margin">מרכז</mat-checkbox>
       <mat-checkbox color="primary" class="example-margin">דרום</mat-checkbox>
-    </section>
+    </section>-->
+    <div class="rowDetails">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>שם האולם</mat-label>
+        <input type="text" matInput [formControl]="hallListSearchControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>שם האולם</mat-label>
-      <input type="text" matInput [formControl]="hallListSearchControl" [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option.name}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>סוג האירוע</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let event of events" [value]="event.eventKind">
+            {{event.eventKind}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>סוג האירוע</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let event of events" [value]="event.eventKind">
-          {{event.eventKind}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+
+
 
     <!--<label for="name">
-    שם מלא
-  </label>
-  <input id="name" type="text" formControlName="name">-->
-
-    <button class="button" type="submit">Purchase</button>
+      שם מלא
+    </label>
+    <input id="name" type="text" formControlName="name">-->
+    <!--<button class="button" type="submit">Purchase</button>-->
 
   </form>
+</div>
+<div class="container mr-2">
+
+
 </div>
